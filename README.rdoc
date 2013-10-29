@@ -1,28 +1,27 @@
-== README
+To Do:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+User login and user authentication with Devise
+User profiles (user#show) and user view and a way to update profiles
+Add avatar photos to profiles with paperclip
 
-Things you may want to cover:
+Discussion boards:
 
-* Ruby version
+	with subcategories, like subreddits
+	category has_many: :posts
+	post has_many: comments
+	comment belongs_to :post
 
-* System dependencies
+	Category name:string description:text
+	Post title:string body:text link:string author/user_id up_votes:integer down_votes:integer
+	Comment title:string body:text author/user_id up_votes:integer down_votes:integer
 
-* Configuration
+Private messages:
 
-* Database creation
+from:user_id
+to:user_id
+title:string
+body:text
 
-* Database initialization
+messages#new
+messages#read (all messages where to: == current_user.id)
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
